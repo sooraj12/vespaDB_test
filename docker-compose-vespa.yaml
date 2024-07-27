@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+
+  vespa:
+      image: vespaengine/vespa
+      container_name: vespaDB
+      restart: always
+      ports:
+        - "27018:8080"
+        - "19071:19071"
+      volumes:
+        - vespa_data:/opt/vespa
+
+volumes:
+  vespa_data:
