@@ -1,3 +1,7 @@
 application.zip
 src/main/application/security/
 .idea/
+
+.venv
+.env
+__pycache__

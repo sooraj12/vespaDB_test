@@ -7,9 +7,17 @@
   <img alt="#Vespa" width="200" src="https://vespa.ai/assets/vespa-ai-logo-rock.svg" style="margin-bottom: 25px;">
 </picture>
 
-# Vespa sample applications - Album Recommendations
+# Vespa sample applications
 
 A simple Vespa application which can be deployed on one node,
-and does search and recommendation in music data.
 
 Follow [Vespa getting started](https://cloud.vespa.ai/en/getting-started) to deploy this.
+
+This repo is based on (https://blog.vespa.ai/turbocharge-rag-with-langchain-and-vespa-streaming-mode/)
+
+```
+python create.py # create vespa application package and deploy to docker container
+python loader.py # load embeddings from pdf
+
+python langchain_retriever.py # langchain BaseRetriever with vespa
+```

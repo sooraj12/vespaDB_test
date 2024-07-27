@@ -6,7 +6,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from vespa.io import VespaResponse
 from sample_pdfs import sample_pdfs
-from vespa.application import Vespa
+from app import app
 
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1024,
@@ -57,7 +57,6 @@ def callback(response: VespaResponse, id: str):
         )
 
 
-app = Vespa(url="http://localhost", port=8080)
 app.feed_iterable(
     schema="pdf", iter=vespa_feed("test_user"), namespace="personal", callback=callback
 )
